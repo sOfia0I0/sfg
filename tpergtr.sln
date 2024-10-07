@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tpergtr", "tpergtr.csproj", "{AE11460D-348A-4DCC-A582-8F7210E50BB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE11460D-348A-4DCC-A582-8F7210E50BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE11460D-348A-4DCC-A582-8F7210E50BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE11460D-348A-4DCC-A582-8F7210E50BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE11460D-348A-4DCC-A582-8F7210E50BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D4B5AFC-4380-48A2-970D-BADE4F2E15B5}
+	EndGlobalSection
+EndGlobal
