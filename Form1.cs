@@ -5,6 +5,7 @@ namespace tpergtr
 {
     public partial class Form1 : Form
     {
+    \\ Вынесение коннекта к базе данных в отдельный класс для наследования 
         private string connectionString = "server=localhost;database=workinfreedom;uid=root;pwd=cDta5hdh56yupo";
         private MySqlConnection connection;
         private MySqlCommand command;
@@ -22,6 +23,7 @@ namespace tpergtr
         {
             try
             {
+                \\ Возможно не обязательно чтобы пароль провеялся на оригинальность он может и повторятся 
                 string query = "SELECT COUNT(*) FROM users WHERE login = @login OR parol = @parol";
                 command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@login", login);
@@ -37,6 +39,7 @@ namespace tpergtr
         }
         private void guna2Button2_Click(object sender, EventArgs e) // регистрация
         {
+            \\ Для упрощения ориентации в программе TextBox необходимо уникально подписывать
             string familiya = guna2TextBox4.Text;
             string imya = guna2TextBox3.Text;
             string telefon = guna2TextBox5.Text;
@@ -125,6 +128,7 @@ namespace tpergtr
                 connection.Open();
                 string query = "SELECT id FROM users WHERE login = @login AND parol = @parol AND role = @role";
                 command = new MySqlCommand(query, connection);
+                \\ Можно использовать цикл или метод для ввода данных в БД
                 command.Parameters.AddWithValue("@login", login);
                 command.Parameters.AddWithValue("@parol", parol);
                 command.Parameters.AddWithValue("@role", role);
