@@ -104,7 +104,8 @@ namespace tpergtr
                 string parol = guna2DataGridView1.CurrentRow.Cells["Пароль"].Value.ToString();
                 string query = "UPDATE users SET familiya = @familiya, imya = @imya, telefon = @telefon, login = @login, parol = @parol WHERE id = @id";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
-                {            
+                {          
+                
                     command.Parameters.AddWithValue("@familiya", familiya);
                     command.Parameters.AddWithValue("@imya", imya);
                     command.Parameters.AddWithValue("@telefon", telefon);
@@ -879,6 +880,7 @@ namespace tpergtr
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
+                        // Сделать отдельный метод для вызова чтобы убрать дублирование
                         guna2DataGridView5.DataSource = dt;
                         guna2DataGridView5.Columns[0].HeaderText = "ID";
                         guna2DataGridView5.Columns[1].HeaderText = "Фамилия";
@@ -1120,6 +1122,7 @@ namespace tpergtr
                 string query = "";
                 if (searchColumn == "Название")
                 {
+                    // Возможно создания метода чтоьы убрать дублирование
                     query = @" SELECT v.id, v.nazvanie, k.nazvanie AS Kategoria, v.opisanie, y.nazvanie AS Yazik, v.srok_vipolnenia, v.byudzhet, u.telefon AS Telefon_Zakazchika, v.status, 
                     CASE WHEN v.status = 1 THEN uf.telefon ELSE NULL END AS Telefon_Freelancera FROM vakansii v JOIN kategorii k ON v.kategoria_id = k.id JOIN yazyki y ON v.yazik_id = y.id 
                     JOIN users u ON v.user_id = u.id LEFT JOIN zayavki z ON v.id = z.vakansiya_id LEFT JOIN users uf ON z.user_id = uf.id WHERE v.nazvanie LIKE @search; ";
@@ -1154,6 +1157,7 @@ namespace tpergtr
                 {
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
+                    // дублирование кода 
                     guna2DataGridView7.DataSource = dt;
                     guna2DataGridView7.Columns[0].HeaderText = "ID";
                     guna2DataGridView7.Columns[1].HeaderText = "Название";
